@@ -6,14 +6,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * @ClassName: API
+ * @Description: TODO 用于HTTP方法或者返回值上的注解
  * @Author XiaoYu
- * @Description TODO 增强功能启动注解
- * @Date 2021/6/4 12:16 下午
- * @Email 794763733@qq.com
+ * @Datetime 2021/5/30 10:03 下午
  */
 @Retention(value = RetentionPolicy.RUNTIME)
-@Target(value = ElementType.TYPE)
-public @interface EnableEnhancement {
-    // TODO 是否开启增强
-    boolean value() default true;
+@Target(value = {ElementType.TYPE, ElementType.METHOD})
+public @interface API {
 }

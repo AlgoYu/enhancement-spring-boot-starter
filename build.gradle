@@ -1,15 +1,24 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '2.5.0'
 }
 
 group 'lib.xiaoyu.cn'
 version '1.0-SNAPSHOT'
 
+apply plugin: 'io.spring.dependency-management'
+
 repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     mavenCentral()
 }
 
 dependencies {
+    // TODO AOP依赖
+    implementation group: 'org.springframework', name: 'spring-webmvc'
+    // TODO Lombok
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+    // TODO 测试
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
